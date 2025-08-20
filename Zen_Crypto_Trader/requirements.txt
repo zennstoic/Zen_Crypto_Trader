@@ -1,0 +1,7 @@
+ccxt
+pandas
+numpy
+pyyaml
+matplotlib
+colorama
+python-dotenv

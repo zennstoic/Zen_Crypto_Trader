@@ -1,0 +1,40 @@
+# === General ===
+mode: paper            # one of: backtest | paper | live
+symbols: ["BTC/USDT"]  # CCXT unified market symbols
+timeframe: "5m"
+loop_interval_sec: 60  # paper/live only
+
+# === Strategy ===
+strategy:
+  name: "sma_cross"
+  params:
+    short_window: 9
+    long_window: 21
+    warmup_bars: 50
+
+# === Risk / Trading ===
+risk:
+  starting_balance_usd: 1000      # backtest/paper
+  position_size_usd: 100          # paper/live
+  take_profit_pct: 0.8            # 0.8% TP
+  stop_loss_pct: 0.3              # 0.3% SL
+
+# === Exchange (CCXT) ===
+exchanges:
+  - name: "binance"
+    api_key: ""
+    api_secret: ""
+    password: ""
+    testnet: false
+  - name: "bybit"
+    api_key: ""
+    api_secret: ""
+    password: ""
+    testnet: true
+
+
+# === Paths ===
+paths:
+  logs_dir: "logs"
+  data_dir: "data"
+  trades_csv: "data/trades.csv"
